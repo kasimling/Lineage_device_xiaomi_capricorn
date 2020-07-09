@@ -15,6 +15,7 @@
 #
 
 # Inherit from those products. Most specific first.
+$(call inherit-product, device/xiaomi/capricorn/car.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
@@ -24,10 +25,8 @@ $(call inherit-product, device/xiaomi/capricorn/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-PRODUCT_COPY_FILES += frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
-
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_capricorn
+PRODUCT_NAME := lineage_capricorn_car
 PRODUCT_DEVICE := capricorn
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 5s
@@ -38,6 +37,9 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="capricorn" \
     PRIVATE_BUILD_DESC="capricorn-user 7.0 NRD90M V9.5.4.0.NAGMIFD release-keys"
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.primary_display_orientation=ORIENTATION_90
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := "Xiaomi/capricorn/capricorn:7.0/NRD90M/V9.5.4.0.NAGMIFD:user/release-keys"

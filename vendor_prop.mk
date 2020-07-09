@@ -37,4 +37,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.qfp.cbge_sleep_enabled=1 \
     persist.qfp.filter_liftfinger=0 \
     persist.qfp.wup_display=0 \
-    persist.qfp.capacitive_enabled=1
+    persist.qfp.capacitive_enabled=1 \
+    ro.adb.secure=0 \
+    persist.sys.usb.config=mtp,adb

@@ -76,5 +76,9 @@ PRODUCT_PACKAGES += \
     init.tfa.sh \
     tinyplay
 
+PRODUCT_PRODUCT_PROPERTIES += \
+     ro.adb.secure=0 \
+     persist.sys.usb.config=mtp,adb
+
 # Inherit from msm8996-common
 $(call inherit-product, device/xiaomi/msm8996-common/msm8996.mk)

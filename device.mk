@@ -80,5 +80,13 @@ PRODUCT_PRODUCT_PROPERTIES += \
      ro.adb.secure=0 \
      persist.sys.usb.config=mtp,adb
 
+# Netowork Loction Provider
+PRODUCT_PACKAGES += \
+     NetworkLocation \
+     MozillaNlpBackend
+
+PRODUCT_COPY_FILES += \
+     vendor/microg/UnifiedNlp/privapp-permissions-com.google.android.gms.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-com.google.android.gms.xml
+
 # Inherit from msm8996-common
 $(call inherit-product, device/xiaomi/msm8996-common/msm8996.mk)

@@ -69,3 +69,6 @@ BOARD_SEPOLICY_DIRS += \
     device/generic/car/common/sepolicy
 
 $(call inherit-product, packages/services/Car/car_product/build/car.mk)
+
+$(call inherit-product, device/xiaomi/capricorn/car/car.mk)
+

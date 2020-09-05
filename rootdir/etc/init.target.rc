@@ -47,3 +47,7 @@ service tfa-sh /vendor/bin/init.tfa.sh /vendor/etc/silence_short.wav 15 1
 
 on property:sys.boot_completed=1
     start tfa-sh
+
+on boot
+    start evs_driver
+    start evs_manager

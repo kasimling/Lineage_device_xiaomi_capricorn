@@ -68,6 +68,13 @@ PRODUCT_COPY_FILES += \
 BOARD_SEPOLICY_DIRS += \
     device/generic/car/common/sepolicy
 
+# The following packages, or their vendor specific equivalents should be include in the device.mk
+PRODUCT_PACKAGES += evs_app
+PRODUCT_PACKAGES += evs_app_default_resources
+PRODUCT_PACKAGES += android.hardware.automotive.evs@1.0-sample
+BOARD_SEPOLICY_DIRS += \
+    packages/services/Car/evs/sepolicy
+
 $(call inherit-product, packages/services/Car/car_product/build/car.mk)
 
 $(call inherit-product, device/xiaomi/capricorn/car/car.mk)
